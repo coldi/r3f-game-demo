@@ -2,9 +2,6 @@ const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 
-const date = new Date();
-const buildString = `${date.getMonth()}.${date.getDate()}.${date.getHours()}`;
-
 module.exports = {
     presets: ['typescript', 'react'],
     addons: config => ({
@@ -29,16 +26,6 @@ module.exports = {
                 '@typescript-eslint/ban-ts-ignore': 'off',
                 '@typescript-eslint/no-namespace': 'off',
             },
-        },
-        prettier: {
-            overrides: [
-                {
-                    files: ['*/ui/TradeDialog.*'],
-                    options: {
-                        printWidth: 120,
-                    },
-                },
-            ],
         },
         babel: {
             presets: (presets = []) => [...presets, '@emotion/babel-preset-css-prop'],
@@ -78,12 +65,6 @@ module.exports = {
                 if (config.options.devMode) {
                     plugins.push(new ReactRefreshPlugin({ disableRefreshCheck: true }));
                 }
-                plugins.push(
-                    new webpack.EnvironmentPlugin({
-                        BUILD_STRING: buildString,
-                        DEMO_MODE: process.env.DEMO_MODE || 0,
-                    })
-                );
                 return plugins;
             },
         },
