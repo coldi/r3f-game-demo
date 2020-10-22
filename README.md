@@ -16,6 +16,9 @@ You can start the game by `yarn && yarn start`, then [open your Browser](http://
 
 To get a better understanding of the architecture I used, you may want to read [this thread on Twitter](https://twitter.com/coldi/status/1254446313955119104).
 
+👉 Also Florent Lagrede ([@flagrede](https://twitter.com/flagrede)) did an **amazing job** in writing an [in-depth walkthrough about this demo](https://dev.to/flagrede/making-a-2d-rpg-game-with-react-tree-fiber-4af1).<br />
+Make sure to check it out! 👀
+
 I'm happy to answer your specific questions about this demo. Just [@coldi](https://twitter.com/coldi) me. 👋
 
 ## Known issues
